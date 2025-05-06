@@ -19,14 +19,16 @@ detalle_microsoft = detalle_accion(df_microsoft, nombre_accion="Microsoft", df_i
 detalle_nvidia = detalle_accion(df_nvidia, nombre_accion="Nvidia", df_indice=df_sp500)
 detalle_amazon = detalle_accion(df_amazon, nombre_accion="Amazon", df_indice=df_sp500)
 detalle_meta = detalle_accion(df_meta, nombre_accion="Meta", df_indice=df_sp500)
+detalle_sp500 = detalle_accion(df_sp500, nombre_accion="S&P 500")
 
 df_datos_detalle = pd.concat([
     detalle_apple,
     detalle_microsoft,
     detalle_nvidia,
     detalle_amazon,
-    detalle_meta
+    detalle_meta,
+    detalle_sp500
 ], ignore_index=True)
 
-df_datos_detalle.to_excel("detalle_acciones_SP500.xlsx", index=True)
+df_datos_detalle.to_excel("../data/detalle_acciones_SP500.xlsx", index=True)
 df_datos_detalle
